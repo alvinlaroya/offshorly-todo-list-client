@@ -8,7 +8,7 @@
         :progress="progress"
       >
         <template #actions>
-          <v-btn tile color="success">
+          <v-btn tile color="success" @click="addDialog = true">
             <v-icon left> mdi-plus </v-icon>
             Add Todo
           </v-btn>
@@ -36,7 +36,7 @@
                   :class="[{ 'green--text': item.done }]"
                 ></v-list-item-title>
                 <v-list-item-subtitle
-                  v-text="item.subtitle"
+                  v-text="item.desc"
                   :class="[{ 'green--text': item.done }]"
                 ></v-list-item-subtitle>
               </v-list-item-content>
@@ -102,53 +102,28 @@ export default {
   },
   data: () => ({
     checkbox: false,
-    addDialog: true,
+    addDialog: false,
     tasks: [
       {
         avatar: "https://cdn.vuetifyjs.com/images/lists/2.jpg",
         title: 'Summer BBQ <span class="grey--text text--lighten-1">4</span>',
         dueDate: "8:00 am June 24, 2022",
-        subtitle: `to Alex, Scott, Jennifer</span> &mdash; Wish I could come, but I'm out of town this  a wf afa aw fawf awf awf awf awf awawf wweekend.`,
+        desc: `to Alex, Scott, Jennifer</span> &mdash; Wish I could come, but I'm out of town this  a wf afa aw fawf awf awf awf awf awawf wweekend.`,
         done: true,
       },
       {
         avatar: "https://cdn.vuetifyjs.com/images/lists/3.jpg",
         title: "Oui oui",
         dueDate: "10:00 am March 24, 2022",
-        subtitle:
-          "Sandra Adams</span> &mdash; Do you have Paris recommendations? Have you ever been?",
+        desc: "Sandra Adams</span> &mdash; Do you have Paris recommendations? Have you ever been?",
         done: true,
       },
       {
         avatar: "https://cdn.vuetifyjs.com/images/lists/4.jpg",
         title: "Birthday gift",
         dueDate: "9:00 am April 24, 2022",
-        subtitle:
-          "Trevor Hansen</span> &mdash; Have any ideas about what we should get Heidi for her birthday?",
+        desc: "Trevor Hansen</span> &mdash; Have any ideas about what we should get Heidi for her birthday?",
         done: false,
-      },
-      {
-        avatar: "https://cdn.vuetifyjs.com/images/lists/5.jpg",
-        title: "Recipe to try",
-        dueDate: "8:00 am June 24, 2022",
-        subtitle:
-          "Britta Holt</span> &mdash; We should eat this: Grate, Squash, Corn, and tomatillo Tacos.",
-        done: false,
-      },
-      {
-        avatar: "https://cdn.vuetifyjs.com/images/lists/2.jpg",
-        title: 'Summer BBQ <span class="grey--text text--lighten-1">4</span>',
-        dueDate: "8:00 am June 24, 2022",
-        subtitle: `to Alex, Scott, Jennifer</span> &mdash; Wish I could come, but I'm out of town this  a wf afa aw fawf awf awf awf awf awawf wweekend.`,
-        done: true,
-      },
-      {
-        avatar: "https://cdn.vuetifyjs.com/images/lists/3.jpg",
-        title: "Oui oui",
-        dueDate: "10:00 am March 24, 2022",
-        subtitle:
-          "Sandra Adams</span> &mdash; Do you have Paris recommendations? Have you ever been?",
-        done: true,
       },
     ],
   }),
